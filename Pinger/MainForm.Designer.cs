@@ -44,6 +44,7 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.timerStatusUpdate = new System.Windows.Forms.Timer(this.components);
+            this.chcAutoSave = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numAttempts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numInterval)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -173,7 +174,7 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripProgressBar1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 334);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 330);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(309, 22);
             this.statusStrip1.TabIndex = 10;
@@ -195,11 +196,22 @@
             this.timerStatusUpdate.Interval = 1000;
             this.timerStatusUpdate.Tick += new System.EventHandler(this.timerStatusUpdate_Tick);
             // 
-            // Form1
+            // chcAutoSave
+            // 
+            this.chcAutoSave.AutoSize = true;
+            this.chcAutoSave.Location = new System.Drawing.Point(142, 296);
+            this.chcAutoSave.Name = "chcAutoSave";
+            this.chcAutoSave.Size = new System.Drawing.Size(76, 17);
+            this.chcAutoSave.TabIndex = 11;
+            this.chcAutoSave.Text = "Auto Save";
+            this.chcAutoSave.UseVisualStyleBackColor = true;
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(309, 356);
+            this.ClientSize = new System.Drawing.Size(309, 352);
+            this.Controls.Add(this.chcAutoSave);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnSave);
@@ -211,7 +223,7 @@
             this.Controls.Add(this.txtHost);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Pinger";
             ((System.ComponentModel.ISupportInitialize)(this.numAttempts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numInterval)).EndInit();
@@ -239,6 +251,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.Timer timerStatusUpdate;
+        private System.Windows.Forms.CheckBox chcAutoSave;
     }
 }
 

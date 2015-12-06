@@ -17,6 +17,7 @@ namespace Pinger
         private int interval = 60;
         private Pings pings = new Pings();
         private int counter = 0;
+        private string filename = null;
 
         public MainForm()
         {
@@ -47,7 +48,8 @@ namespace Pinger
         // Save ping results to file
         private void saveFileDialog_FileOk(object sender, CancelEventArgs e)
         {
-            pings.SaveToFile(saveFileDialog.FileName);
+            filename = saveFileDialog.FileName;
+            pings.SaveToFile(filename);
         }
 
         // Stop pinging
@@ -81,6 +83,12 @@ namespace Pinger
             PingResult ping = new PingResult();
             ping = tool.DoPing(txtHost.Text, Convert.ToInt32(numAttempts.Value), pings);
             txtShell.AppendText(ping + "\r\n");
+
+            // Auto save
+            if(chcAutoSave.Checked && filename != null)
+            {
+                pings.SaveToFile(filename);
+            }
         }
     }
 }
