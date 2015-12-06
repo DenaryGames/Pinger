@@ -32,7 +32,7 @@ namespace Pinger
             }
 
             // Calculate statistics, create new PingResult
-            result.SuccessRate = success / echoNum * 100;
+            result.SuccessRate = (float) success / echoNum * 100;
 
             if(result.SuccessRate > 0)
             {
